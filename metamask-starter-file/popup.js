@@ -185,7 +185,7 @@ document.getElementById("center").style.display = "block";
 
 const wallet = ethers.Wallet.createRandom();
 if(wallet.address  ){
-    consolr.log(wallet);
+    console.log(wallet);
     //api call
 
     const url="http://localhost:3000/api/v1/user/signup";   
@@ -234,7 +234,40 @@ fetch(url, {
 }
 
 function login(){
+documnt.getElementById("login_form").style.display="none";
+document.getElementById("center").style.display="block";
 
+const email= document.getElementById("login_email").value;
+const password= document.getElementById("login_password").value;
+
+//api call
+const url="http://localhost:3000/api/v1/user/login";
+const data={
+    email:email,
+    password:password,
+
+};
+
+fetch(url, {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json",
+    },
+    body:JSON.stringify(data),
+}).then(response => response.json()).then ((result)=>{
+    console.log(result);
+    const userWallet={
+        address: result.date.user.address,
+        private_key: result.date.user.private_key,
+        mnemonic: result.data.user.mnemonic,
+    }
+    const json=JSON.stringify(userWallet);
+    localStorage.setItem("userWallet", json);
+    window.location.reload();
+}).catch((error)=>
+{
+    console.log(error);
+})
 }
 
 function createUser(){
@@ -244,7 +277,8 @@ function createUser(){
 
 
 function logout(){
-
+localStorage.removeItem("userWallet");
+window.location.reload();
 }
 
 function openTransfer(){
