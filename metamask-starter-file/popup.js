@@ -448,9 +448,25 @@ fetch(url).then((response) => response.json()).then((result) => {
 }
 
 function copyAddress(){
-
+navigator.clipboard.writeText(address);
 }
 
 function chnageAccount(){
+const data=documtn.querySelector(".accountValue");
+const address=data.getAttribute("data-address");
+const privateKey=data.getAttribute("data-privateKey");
 
+console.log(privateKey,address)
+
+const userWallet={
+    address:address,
+    privateKey:privateKey,
+    mnemonic:changed,
 }
+
+const jsonObj=JSON.stringify(userWallet);
+localStorage.setItem("userWallet", jsonObj);
+window.location.reload();
+}
+
+window.onload=myFuction;
