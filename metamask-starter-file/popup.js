@@ -282,45 +282,86 @@ window.location.reload();
 }
 
 function openTransfer(){
-
+document.getElementById("tranfer_center").style.display="block";
+document.getElementById("home").style.display="none";
 }
 
 function goback(){
+    document.getElementById("tranfer_center").style.display="none";
+document.getElementById("home").style.display="block";
 
 }
 
 function importGoBack(){
-
+    document.getElementById("import_token").style.display="none";
+    document.getElementById("home").style.display="block";
 }
 
 function openActivity(){
-
+    document.getElementById("activity").style.display="block";
+    document.getElementById("assets").style.display="none";
 }
 
 function openAssets(){
+    document.getElementById("activity").style.display="none";
+    document.getElementById("assets").style.display="block";
 
 }
 
 function goHomePage(){
+    document.getElementById("create_popUp").style.display="none";
+    document.getElementById("home").style.display="block";
 
 }
 
 function openImport(){
-
+    document.getElementById("import_token").style.display="block";
+    document.getElementById("home").style.display="none";
 }
 
 
 function openImportModel(){
+    document.getElementById("import_account").style.display="block";
+    document.getElementById("home").style.display="none";
 
 }
 
 function closeImportModel(){
+    document.getElementById("import_account").style.display="none";
+    document.getElementById("home").style.display="block";
 
 }
 
 function addToken(){
+ const address= document.getElementById("token_address").value;
+ const name= document.getElementById("token_name").value;
+ const symbol= document.getElementById("token_symbol").value;
 
+
+ //api call
+
+ const url ="http://localhost:3000/api/v1/user/addToken";
+ const data={
+    address:address,
+    name:name,
+    symbol:symbol,
+ };
+
+ fetch(url, {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json",
+    },
+    body:JSON.stringify(data),
+ }).then(response => response.json()).then ((result)=>{
+    console.log(result);
+    window.location.reload();
+})
+.catch((error)=>{
+    console.log(error); 
 }
+)}
+
 
 function addAccount(){
 
