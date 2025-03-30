@@ -114,31 +114,122 @@ wallet.sendTransaction(tx).then(txogject => {
 
 }
 function checkBlance(){
+const provider=new ethers.providers.JsonRpcProvider(providerURL);
+provider .getBalance(address).then((balance)=>{
+    const balanceEth=ethers.utils.formatEther(balance);
 
+    document.getElementById("accountBalance").innerHTML=`${balanceEth}MATIC`;
+
+    document.getElementById("userAddress").innerHTML=`${address.slice(0,15)}...`;
+})
 }
 
 function getOpenNetwork(){
+document.getElementById("network").style.display="block";
 
 }
 
 
-function getSelecteNetwork(){    
+function getSelecteNetwork(e){  
+    const element = document.getElementById("selected_network");
+    element.innerHTML=e.target.innerHTML;
+    
+    if(e.target.innerHTML==="Ethereum Mainnet"){
+        providerURL="https://eth-mainnet.g.alchemy.com/v2/k4iwqu7ubU9nPnGHsHftZzufXkQ0_TAj";
+        document.getElementById("network").style.display="none";
 
+}else if(e.target.innerHTML==="Polygon Mumbai"){
+    providerURL="https://rpc.ankr.com/polygon";
+    document.getElementById("network").style.display="none";
+
+}else if(e.target.innerHTML=="Polygon Mainnet"){
+    providerURL="https://eth-mainnet.g.alchemy.com/v2/k4iwqu7ubU9nPnGHsHftZzufXkQ0_TAj/getNFTs/?owner=vitalik.eth";
+    document.getElementById("network").style.display="none";
+}
+else if(e.target.innerHTML=="Holesky test network"){
+    providerURL="https://rpc.ankr.com/eth_holesky/1c47b62690b2834e21a6db4ee62f50c9b7fcd61924a63657ebd55a6d9abe5a90";
+    document.getElementById("network").style.display="none";
+}else if(e.target.innerHTML=="sepolia test network"){
+    providerURL="https://rpc.ankr.com/eth_sepolia/1c47b62690b2834e21a6db4ee62f50c9b7fcd61924a63657ebd55a6d9abe5a90";
+    document.getElementById("network").style.display="none";}
+
+
+    console.log(providerURL);
 }
 
 function setNetwork(){
-
+ document.getElementById("network").style.display="none";
 }
 
 function loginUser(){
+ document.getElementById("createAccount").style.display="none";
+ document.getElementById("loginAccount").style.display="block";
+
 
 }
 
 function openCreate(){
-
+    document.getElementById("createAccount").style.display="none";
+    document.getElementById("create_popUp").style.display="block";
 }
 
 function signUp(){
+const name = document.getElementById("sign_up_name").value;
+const email = document.getElementById("sign_up_email").value;
+const password = document.getElementById("sign_up_password").value;
+
+const confirmPassword = document.getElementById("sign_up_PasswordConfirm").value;
+
+document.getElementById("field").style.display = "none";
+document.getElementById("center").style.display = "block";
+
+const wallet = ethers.Wallet.createRandom();
+if(wallet.address  ){
+    consolr.log(wallet);
+    //api call
+
+    const url="http://localhost:3000/api/v1/user/signup";   
+    const data={
+        name:name,
+        email:email,
+        password:password,
+        passwordConfirm:confirmPassword,
+        address:wallet.address,
+        privateKey:wallet.privateKey,
+        mnemonic :wallet.mnemonic.phrase,
+    }
+
+fetch(url, {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json",
+    },
+    body:JSON.stringify(data),
+})
+.then(response => response.json()).then ((result)=>{
+    document.getElementById("createAddress").innerHTML=wallet.address;
+    document.getElementById("createPrivateKey").innerHTML=wallet.privateKey;
+    document.getElementById("createMnemonic").innerHTML=wallet.mnemonic.phrase;
+    document.getElementById("center").style.display="none";
+    document.getElementById("accountData").style.display="block";
+    document.getElementById("sing_up").style.display="none";
+
+
+    const userWallet = {
+        address: wallet.address,
+        privateKey: wallet.privateKey,
+        mnemonic: wallet.mnemonic.phrase,
+    };
+
+    const jsonObj= JSON.stringify(userWallet);
+    localStorage.setItem("userWallet", jsonObj);
+
+    document.getElementById("goHomePage").style.display="block";
+    window.location.reload();
+}).catch((error) => {
+    console.log(error);
+});
+}
 
 }
 
@@ -147,7 +238,8 @@ function login(){
 }
 
 function createUser(){
-
+    document.getElementById("createAccount").style.display="block";
+    document.getElementById("loginAccount").style.display="none";
 }
 
 
