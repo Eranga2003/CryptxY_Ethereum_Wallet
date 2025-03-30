@@ -360,15 +360,91 @@ function addToken(){
 .catch((error)=>{
     console.log(error); 
 }
-)}
+)
+}
 
 
 function addAccount(){
+const privateKey= document.getElementById("add_account_private_key").value;
+const provider =new ethers.providers.JsonRpcProvider(providerURL);
+let wallet=new ethers.Wallet(privateKey, provider);
+console.log(wallet);
 
+//api call
+const url ="http://localhost:3000/api/v1/account/createaccount";
+const data={
+    address:wallet.address,
+    privateKey:wallet.privateKey,
+
+
+};
+fetch(url, {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json",
+    },
+    body:JSON.stringify(data),
+}).then(response => response.json()).then ((result)=>{
+    console.log(result);
+    window.location.reload();
+})
+.catch((error)=>{
+    console.log(error); 
+}
+)
 }
 
 function myFuction(){
+const str =localStorage.getItem("userWallet");
+const parseobj = JSON.parse(str);
 
+if(parseobj.address){
+    document.getElementById("LoginUser").style.display="none";
+    document.getElementById("home").style.display="block";
+
+    privateKey=parseobj.private_key;
+    address=parseobj.address;
+
+    checkBlance(parseobj.address)
+}
+const tokenRender=document.querySelector(".assets");
+const accountRender=document.querySelector(".accountList");
+const url="http://localhost:3000/api/v1/tokens/alltokens";
+
+fetch(url).then((response) => response.json()).then((result) => {
+    let element="";
+    data.data.tokens.map((token)=>
+    element+=
+        `<div class="assets_item">
+        <img class="assets_item_img"
+        src="./assets/theblockchaincoders.png"
+        alt=""
+        />
+        <span>${token.address.slice(0,15)}...</span>
+        <span>${token.symbol}</span>
+        </div>
+         `)
+    
+    }).catch((error)=>{
+        console.log(error);
+    })
+    fetch("http://localhost:3000/api/v1/user/allAccount").then((response) => response.json()).then((result) => {
+        let account="";
+        data.data.account.map((account,i)=>
+        account+=
+            `<div class="lists">
+            <p>${i+1}</p>
+            <p class= "accountValue" data-address=${account.address}data-privateKey= ${account.privateKey}>${account.address.slice(0,25)}...</p>
+            
+            </div>
+             `)
+
+        accountRender.innerHTML=accounts;
+        
+        }).catch((error)=>{
+            console.log(error);
+        })
+    console.log(privateKey)    
 }
 
 function copyAddress(){
