@@ -78,7 +78,7 @@ let privateKey;
 let address;
 
 
-//function
+//functions
 
 function handler() {
 
