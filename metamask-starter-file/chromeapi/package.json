@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "nodemon server.js",
-    "lint": "next lint"
-  },
+  "dev": "nodemon server.js",
+  "build": "next build",
+  "start": "node server.js",
+  "lint": "next lint"
+}
+,
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
@@ -18,3 +19,4 @@
     "jsonwebtoken": "^8.5.1"
   }
 }
+
