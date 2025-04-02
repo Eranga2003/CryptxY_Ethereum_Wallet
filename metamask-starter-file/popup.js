@@ -1,5 +1,21 @@
-document.addeventListener ('DOMContentLoaded', function () {
-    
+document.addEventListener('DOMContentLoaded', function () {
+    // Only add event listeners for elements that exist in the HTML
+    const headerNetwork = document.getElementById('header_network');
+    const networkItem = document.getElementById('network_item');
+    const addNetwork = document.getElementById('add_network');
+
+    if (headerNetwork) {
+        headerNetwork.addEventListener('click', getOpenNetwork);
+    }
+
+    if (networkItem) {
+        networkItem.addEventListener('click', getSelecteNetwork);
+    }
+
+    if (addNetwork) {
+        addNetwork.addEventListener('click', setNetwork);
+    }
+
     document.getElementById('accountList')
     .addEventListener('click', chnageAccount);
 
@@ -9,15 +25,6 @@ document.addeventListener ('DOMContentLoaded', function () {
     document.getElementById('transferFund')
     .addEventListener('click',handler );
 
-    document.getElementById('header_network')
-    .addEventListener('click',getOpenNetwork );
-
-    document.getElementById('network_item')
-    .addEventListener('click',getSelecteNetwork );
-
-    document.getElementById('add_network')
-    .addEventListener('click',setNetwork );
-
     document.getElementById('loginAccount')
     .addEventListener('click',loginUser );
 
@@ -26,7 +33,6 @@ document.addeventListener ('DOMContentLoaded', function () {
 
     document.getElementById('openCreate')
     .addEventListener('click',openCreate );
-
 
     document.getElementById('sign_up')
     .addEventListener('click',signUp );
@@ -66,12 +72,9 @@ document.addeventListener ('DOMContentLoaded', function () {
 
     document.getElementById('add_new_account')
     .addEventListener('click',addAccount );
-
-
-
 });
 
-let providerURL ='https://eth-mainnet.g.alchemy.com/v2/k4iwqu7ubU9nPnGHsHftZzufXkQ0_TAj/getNFTs/?owner=vitalik.eth';
+let providerURL = 'https://eth-mainnet.g.alchemy.com/v2/k4iwqu7ubU9nPnGHsHftZzufXkQ0_TAj';
 
 //let provider;
 let privateKey;

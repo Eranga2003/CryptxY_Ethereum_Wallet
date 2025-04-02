@@ -33,22 +33,117 @@
  <!-- END OF THE HEADER -->
 
 <!-- NETWORK SECTION -->
- <div id="network_item" class="network_list">
- <p classname="network_item">
+
+<div id="network"class="network">
+<div class="network_title">
+  <p>
+    Networks
+  </p>
+
+</div>
+
+<div id="network_item"class="network_list"></div>
+
+<div id="network_item" class="network_list">
+  <p class="network_item" style="display: flex; align-items: center; gap: 8px; margin: 0; color: white;">
+      <img src="./assets/SVG/lock.svg" alt="lock icon">
+      Ethereum Mainnet
+  </p>
+  <p class="network_item" style="display: flex; align-items: center; gap: 8px; margin: 0; color: white;">
+    <img src="./assets/SVG/lock.svg" alt="lock icon">
+    poloygon Mainnet
+</p>
+<p class="network_item" style="display: flex; align-items: center; gap: 8px; margin: 0; color: white;">
+  <img src="./assets/SVG/lock.svg" alt="lock icon">
+  Plygon Mumbai
+</p>
+<p class="network_item" style="display: flex; align-items: center; gap: 8px; margin: 0; color: white;">
+  <img src="./assets/SVG/lock.svg" alt="lock icon">
+  Goeril test network 
+</p>
+<p class="network_item" style="display: flex; align-items: center; gap: 8px; margin: 0; color: white;">
+  <img src="./assets/SVG/lock.svg" alt="lock icon">
+  Sepolia test network
+</p>
+
+</div>
+<button id="add_network"class="button3 addStyle">Add network</button>
+</div>
+<!-- END OF NETWORK SECTION -->
+
+<!-- HOME SCREEN -->
+<div id="creatAccount" class="home_screen_signup">
+  <img src="./assets/theblockchaincoders.png"
+  alt="theblockchaincoders"
+  class="home_screen_img"
+  />
+<h1 class="home_title">@CryptXY Wallet</h1>
+<p>Welcome to  Sri Lankan First Time Crypto Payment Wallet.Now You can pay for anywhere for Anything with Us </p>
+<button id="openCreate"class="button3 connectWallet">Create Account</button>
+  <p>Login to your Account 
+    <strong class="home_title" id="loginAccount">Login</strong></p>
+
+</div>
+
+ <!-- END OF HOME SCREEN -->
+<!-- CREATE POPUP -->
+<div id="create_popUp" class="create _popUp">
+<div class="form">
+  <p id="heading">Create Account</p>
+  <div id="field">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+      <input type="text" class="input-field" placeholder="name" id="sign_up_name"
+        style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+    <div id="field">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="./assets/SVG/@.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+        <input type="text" class="input-field" placeholder="email" id="sign_up_email"
+          style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div id="field">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+          <input type="text" class="input-field" placeholder="password" id="sign_up_password"
+            style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+      </div>
+      
+    </div>
+    <div id="field">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+        <input type="text" class="input-field" placeholder="passwordConfirm" id="sign_up_passwordConfirm"
+          style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  
   
 
 
 
- </p>
 </div>
 
-<!-- END OF NETWORK SECTION -->
+
+
+</div>
+
+
+
+ <!-- END OF CREATE POPUP -->
 </div>
 
 
 
 
  </div>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+<script src="popup.js"></script>
 
   </body>
 </html>
