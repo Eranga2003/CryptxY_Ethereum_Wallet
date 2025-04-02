@@ -96,18 +96,21 @@
       <input type="text" class="input-field" placeholder="name" id="sign_up_name"
         style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
     </div>
+    <p class="space"></p>
     <div id="field">
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="./assets/SVG/@.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
         <input type="text" class="input-field" placeholder="email" id="sign_up_email"
           style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
       </div>
+      <p class="space"></p>
       <div id="field">
         <div style="display: flex; align-items: center; gap: 10px;">
           <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
           <input type="text" class="input-field" placeholder="password" id="sign_up_password"
             style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
         </div>
+        <p class="space"></p>
       </div>
       
     </div>
@@ -118,24 +121,94 @@
           style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
       </div>
     </div>
+    <p class="space"></p>
     
     
   </div>
   
   
   
+  <div id="center" class="center">
+    <!-- ERROR STARTING POINT -->
+    <div class="loader">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    
+    <style>
+    .loader {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      margin: 50px auto;
+    }
+    
+    .bar {
+      position: absolute;
+      width: 8%;
+      height: 24%;
+      left: 49%;
+      top: 43%;
+      opacity: 0;
+      background: #666;
+      border-radius: 50px;
+      animation: fade 1s linear infinite;
+      transform-origin: center bottom;
+    }
+    
+    @keyframes fade {
+      0% { opacity: 1; }
+      100% { opacity: 0.25; }
+    }
+    
+    .bar:nth-child(1) { transform: rotate(0deg) translate(0, -130%); animation-delay: 0s; }
+    .bar:nth-child(2) { transform: rotate(30deg) translate(0, -130%); animation-delay: -0.9167s; }
+    .bar:nth-child(3) { transform: rotate(60deg) translate(0, -130%); animation-delay: -0.8333s; }
+    .bar:nth-child(4) { transform: rotate(90deg) translate(0, -130%); animation-delay: -0.75s; }
+    .bar:nth-child(5) { transform: rotate(120deg) translate(0, -130%); animation-delay: -0.6667s; }
+    .bar:nth-child(6) { transform: rotate(150deg) translate(0, -130%); animation-delay: -0.5833s; }
+    .bar:nth-child(7) { transform: rotate(180deg) translate(0, -130%); animation-delay: -0.5s; }
+    .bar:nth-child(8) { transform: rotate(210deg) translate(0, -130%); animation-delay: -0.4167s; }
+    .bar:nth-child(9) { transform: rotate(240deg) translate(0, -130%); animation-delay: -0.3333s; }
+    .bar:nth-child(10) { transform: rotate(270deg) translate(0, -130%); animation-delay: -0.25s; }
+    .bar:nth-child(11) { transform: rotate(300deg) translate(0, -130%); animation-delay: -0.1667s; }
+    .bar:nth-child(12) { transform: rotate(330deg) translate(0, -130%); animation-delay: -0.0833s; }
+    </style>
 
-
-
+<div id="accountData" class="accountData">
+  <h3 id="accountInfo">Address</h3>
+  <p id="createAddress">Address:</p>
+  <h3>Private Key</h3>
+  <p id="createdPrivateKey">Private Key:</p>
+  <h3>Mnemonics</h3>
+  <p id="createdMnmonic">Mnemonics:</p>
+</div>
+<style>
+ h3{
+    color:#00ffc8;
+  }
+</style>
+<button id="sign_up"class="button3 connectWallet">Sign Up</button>
+<button id="goHomePage" class="button3 connectWallet">Go Back</button>
 </div>
 
-
-
 </div>
-
-
-
  <!-- END OF CREATE POPUP -->
+
+ <!-- LOGIN COMPONENT -->
+
+
+ <!-- END OF LOGIN COMPONENT -->
 </div>
 
 
