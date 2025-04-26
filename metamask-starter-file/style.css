@@ -99,9 +99,11 @@ body{
  }
  
  .home_screen_img{
-    width:100px;
-    height:100px;
-    
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
  }
 
  .home_title{
@@ -140,6 +142,7 @@ body{
     text-align:center;
     padding:2rem;
     /* display:block; */
+    display: none;
  }
 
  .create_popUp {
@@ -150,7 +153,7 @@ body{
     background-color: #171717;
     text-align: center;
     padding: 2rem;
-    /* display: none; */
+    display: none;
     color: rgb(0, 255, 200);
 }
 
@@ -300,7 +303,7 @@ textarea{
 }
 
 .center {
-    /* display: none; */
+    display: none;
     justify-content: center;
     align-items: center;
     margin: 0 auto;

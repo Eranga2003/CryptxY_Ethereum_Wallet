@@ -9,6 +9,7 @@
   <body>
  <div class="card">
 <div class="card2">
+  </div>
   <!-- HEADER -->
 <div class="header">
 
@@ -87,7 +88,7 @@
 
  <!-- END OF HOME SCREEN -->
 <!-- CREATE POPUP -->
-<div id="create_popUp" class="create _popUp">
+<div id="create_popUp" class="create_popUp">
 <div class="form">
   <p id="heading">Create Account</p>
   <div id="field">
@@ -203,18 +204,89 @@
 </div>
 
 </div>
+</div>
  <!-- END OF CREATE POPUP -->
 
  <!-- LOGIN COMPONENT -->
-
-
- <!-- END OF LOGIN COMPONENT -->
+<div id="LoginUser" class="home_screen_login">
+  <img src="./assets/theblockchaincoders.png"
+       alt="CryptXY Wallet Logo"
+       class="home_screen_img"
+  />
+  <h1 class="home_title">@theblockchaincoders</h1>
+  <p>Welcome To CryptXy Wallet</p>
+  <div class="form" id="login_form"></div>
+  <div class ="field">
+    <img src="./assets/SVG/@.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+    <input typr="text"
+     id="Login_email" 
+     class="input-field"
+     placeholder="email" >
+  </div>
+  <div class ="field">
+    <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+    <input typr="text"
+     id="Login_password" 
+     class="input-field"
+     placeholder="password" 
+     class="input_field"
+     placeholder="password" >
+  </div>
+  <button id ="login_up" class="button3 connectWallet">Login</button>
+  <p>Don't have an account? 
+    <strong class="home_title" id="createAccount">Create Account</strong></p>
+  <p>Forgot Password?</p>
+</div>
 </div>
 
 
 
+ <!-- END OF LOGIN COMPONENT -->
 
+<!-- TRANSFER COMPONENT -->
+<div class ="transfer_form" id="transfer_form">
+   <div class ="form">
+    <img src="./assets/arrowleft.png"
+       alt=""
+       class="goback"
+       id="goback"
+    />
+
+
+    <p id="heading">Transfer Funds</p>
+    <div class ="field">
+      <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+      <input type="text"
+       id="amount" 
+       class="input-field"
+       placeholder="Enter amount" >
+
+   </div>
+   <p class="space"></p>
+   <div class ="field">
+    <img src="./assets/SVG/@.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
+    <input type="text"
+     id="address" 
+     class="input-field"
+     placeholder="To Address" >
+     </div>
+  
+ <small>
+   <a href ="" id ="link" target="_blank">Check Your Transaction</a>
+ </small>
+ <button id="transferFund" class="button3 connectWallet">Transfer</button>
+ >
  </div>
+
+</div>
+
+
+
+ <!-- END OF TRANSFER COMPONENT -->
+
+
+
+ 
 <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
 <script src="popup.js"></script>
 
