@@ -218,14 +218,14 @@
   <div class="form" id="login_form"></div>
   <div class ="field">
     <img src="./assets/SVG/@.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
-    <input typr="text"
+    <input type="text"
      id="Login_email" 
      class="input-field"
      placeholder="email" >
   </div>
   <div class ="field">
     <img src="./assets/SVG/lock.svg" alt="question" class="network-icon" style="width: 20px; height: auto;">
-    <input typr="text"
+    <input type="text"
      id="Login_password" 
      class="input-field"
      placeholder="password" 
@@ -275,7 +275,7 @@
    <a href ="" id ="link" target="_blank">Check Your Transaction</a>
  </small>
  <button id="transferFund" class="button3 connectWallet">Transfer</button>
- >
+ 
  </div>
 
 </div>
@@ -323,7 +323,7 @@
 
     </div>
     <button id="add_new_token" class="button3 connectWallet">Import</button>
-    <!-- IMPORT Account -->
+    
 
 
 
@@ -332,9 +332,81 @@
 </div>
  </div>
 
+<!-- END OF IMPORT COMPONENT -->
 
+<!-- IMPORT Account -->
 
+<div class="home" id="home">
+  <div class ="home_header">
 
+  </div>
+  
+  <img 
+  src="./assets/theblockchaincoders.png"
+  class="home_header_img"
+  alt="theblockchaincoders"
+  />
+  <h1 id="accountBalance">0.00MATIC</h1>
+
+  <div class="home_features">
+    <div class ="home_feature_item">
+      <img src="./assets/buy.png" alt=""
+      class="home_features_img"
+      />
+<p class="text">Buy</p>
+  </div>
+  <div class ="home_feature_item">
+    <img src="./assets/send.png" alt=""
+    class="home_features_img"
+    />
+<p class="text">send</p>
+</div><div class ="home_feature_item">
+  <img src="./assets/user.png" alt=""
+  class="home_features_img"
+  />
+<p class="text">Account</p>
+</div><div class ="home_feature_item">
+  <img src="./assets/import.png" alt=""
+  class="home_features_img"
+  />
+<p class="text">Import</p>
+</div>
+</div>
+ 
+<div class="home_tabs">
+  <p id ="open_assets">Assets</p>
+  <p id ="logout">logout</p>
+  <p id="open_activity">Activity</p>
+
+</div>
+<p class="space"></p>
+<p class="space"></p>
+<!-- ASSETS -->
+ <div id="assets"class="assets"></div>
+ <!-- ACTIVITY -->
+ <div id="activity" class="activity">
+  <div class="activity_item">
+    <img 
+      src="./assets/theblockchaincoders.png"
+      class="assets_item_img"
+      alt=""
+    />
+    <!-- codefor number class in css code by me  -->
+    <span class="number">3338d89332....</span>
+    <span class="number">0.45 MATIC</span>
+  </div>
+  <div class="activity_item">
+    <img 
+      src="./assets/theblockchaincoders.png"
+      class="assets_item_img"
+      alt=""
+    />
+    <!-- codefor number class in css code by me  -->
+    <span class="number">3338d89332....</span>
+    <span class="number">0.45 MATIC</span>
+  </div>
+  
+</div> <!-- <-- Closing activity div -->
 
 
 
@@ -342,17 +414,17 @@
 
      <!-- END OF IMPORT Account -->
 
-  </div>
-</div>
+  
+ 
 
 
 
 
 
-<!-- END OF IMPORT COMPONENT -->
+
 
  
-<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js "type="application/javascript"></script>
 <script src="popup.js"></script>
 
   </body>

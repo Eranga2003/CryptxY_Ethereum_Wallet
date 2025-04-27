@@ -142,18 +142,17 @@ body{
     text-align:center;
     padding:2rem;
     /* display:block; */
-    display: none;
+    /* display: none; */
  }
 
  .create_popUp {
-    display: flex;
+    display: none;  /* This will be controlled by JavaScript */
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     background-color: #171717;
     text-align: center;
     padding: 2rem;
-    display: none;
     color: rgb(0, 255, 200);
 }
 
@@ -410,7 +409,7 @@ textarea{
     background-color: #171717;
     text-align: center;
     padding: 1rem 2rem;
-    /* display: none; */
+    display: none;
 }
 .home_header {
     display: flex;
@@ -436,16 +435,23 @@ textarea{
     object-fit: contain;
 }
 
-.home_feature_item > p {
+.home_feature_item{
     line-height: 0;
     color: #00ff75;
 }
 
-.home_tabs {
+.home_tabs{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 1rem;
+    gap: 1rem;
 }
+
+ 
+    
+    
+    
+
 
 /* ASSETS */
 
@@ -468,6 +474,10 @@ textarea{
 .activity {
     display: none;
 }
+.number{
+    color:#00ff75;
+    display:none;
+}
 
 .import_token{
     display: none;
@@ -482,6 +492,14 @@ textarea{
     display: none;
 }
 
+.activity_item{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid #00ff75;
+    padding: 1rem 0;
+}
 #golionePage {
     display: none;
 }
@@ -509,3 +527,5 @@ textarea{
   
  
 /* CHECK BOX */
+
+

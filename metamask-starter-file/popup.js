@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.getElementById('accountList')
-    .addEventListener('click', chnageAccount);
+    .addEventListener('click', changeAccount);
+
 
     document.getElementById('userAddress')
     .addEventListener('click', copyAddress);
@@ -172,8 +173,8 @@ function loginUser(){
 }
 
 function openCreate(){
-    document.getElementById("createAccount").style.display="none";
-    document.getElementById("create_popUp").style.display="block";
+    document.getElementById("creatAccount").style.display = "none";
+    document.getElementById("create_popUp").style.display = "flex";
 }
 
 function signUp(){
@@ -398,6 +399,7 @@ fetch(url, {
 }
 
 function myFuction(){
+    console.log(ethers)
 const str =localStorage.getItem("userWallet");
 const parseobj = JSON.parse(str);
 
